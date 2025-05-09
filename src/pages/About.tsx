@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import CursorFollower from '@/components/CursorFollower';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, Tool, Star, BookOpen } from 'lucide-react';
+import { ArrowRight, Download, Wrench, Star, BookOpen } from 'lucide-react';
 
 const About = () => {
   const [loading, setLoading] = useState(false);
@@ -235,7 +235,7 @@ const About = () => {
                 custom={1}
               >
                 <h3 className="text-xl font-semibold mb-6 flex items-center">
-                  <Tool className="mr-2 h-5 w-5 text-primary" />
+                  <Wrench className="mr-2 h-5 w-5 text-primary" />
                   Tools & Software
                 </h3>
                 
