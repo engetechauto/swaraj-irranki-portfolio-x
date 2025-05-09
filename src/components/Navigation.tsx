@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -42,16 +41,14 @@ const Navigation = () => {
             <Link to="/contact" className="nav-link">Contact</Link>
           </nav>
           
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
+          <div className="flex items-center">
             <Button asChild className="btn-primary">
               <a href="/contact">Get in Touch</a>
             </Button>
           </div>
         </div>
         
-        <div className="flex md:hidden items-center">
-          <ThemeToggle />
+        <div className="flex md:hidden">
           <Button 
             variant="ghost" 
             size="icon" 
