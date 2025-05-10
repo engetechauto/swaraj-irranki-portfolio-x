@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
+				lusitana: ['Lusitana', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -56,10 +57,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				dark: '#040316',
-				light: '#f1f2ed',
-				teal: '#3784c8',
-				accent1: '#b4c63f',
+				dark: '#0C1C2C',
+				light: '#FDFBF7',
+				teal: '#2787c8',
+				accent1: '#F0C84C',
 				accent2: '#565a6c',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
