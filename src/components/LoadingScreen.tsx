@@ -53,8 +53,8 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       className={`loading-wrapper flex items-center justify-center ${fadeOut ? 'opacity-0' : 'opacity-100'}`}
       aria-hidden={fadeOut}
     >
-      <div className="loading-content text-center">
-        <div className="loading-text text-4xl md:text-6xl lg:text-7xl font-bold">
+      <div className="loading-content text-center w-full px-4">
+        <div className="loading-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold">
           <span className="text-secondary">{greetings[currentGreeting]}</span>
           <span className="ml-1 animate-blink">_</span>
         </div>
