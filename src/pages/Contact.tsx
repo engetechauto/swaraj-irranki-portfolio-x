@@ -121,20 +121,20 @@ const Contact = () => {
                 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <MailIcon className="h-6 w-6 text-primary" />
+                    <div className="bg-secondary/10 p-3 rounded-full mr-4">
+                      <MailIcon className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
                       <h3 className="font-medium mb-1">Email</h3>
-                      <a href="mailto:contact@swarajirranki.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      <a href="mailto:contact@swarajirranki.com" className="text-muted-foreground hover:text-secondary transition-colors">
                         contact@swarajirranki.com
                       </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <PhoneIcon className="h-6 w-6 text-primary" />
+                    <div className="bg-secondary/10 p-3 rounded-full mr-4">
+                      <PhoneIcon className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
                       <h3 className="font-medium mb-1">Phone</h3>
@@ -145,13 +145,13 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <MapPinIcon className="h-6 w-6 text-primary" />
+                    <div className="bg-secondary/10 p-3 rounded-full mr-4">
+                      <MapPinIcon className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
                       <h3 className="font-medium mb-1">Location</h3>
                       <p className="text-muted-foreground">
-                        San Francisco Bay Area, California
+                        Visakhapatnam, Andhra Pradesh, India
                       </p>
                     </div>
                   </div>
@@ -282,41 +282,53 @@ const Contact = () => {
           </div>
         </section>
         
-        {/* FAQ Section */}
+        {/* Testimonial Section */}
         <section className="px-6 md:px-10 lg:px-20 py-16 bg-card">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="section-heading">Frequently Asked Questions</h2>
+            <h2 className="section-heading mb-12">What People Say</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  question: "What types of projects are you interested in collaborating on?",
-                  answer: "I'm particularly interested in projects involving robotics, digital twin technologies, additive manufacturing, and automation. I enjoy challenges that combine mechanical engineering with emerging technologies."
+                  name: "Rajesh Kumar",
+                  role: "CTO, TechInnovate",
+                  testimonial: "Swaraj's knowledge in mechanical engineering automation solutions transformed our manufacturing process. His expertise in robotics integration saved us time and resources.",
+                  avatar: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=300&auto=format&fit=crop"
                 },
                 {
-                  question: "Are you available for consulting work?",
-                  answer: "Yes, I offer consulting services in mechanical engineering design, robotics development, digital twin implementation, and automation systems. Please contact me with details about your project for availability."
+                  name: "Ananya Patel",
+                  role: "Research Director, Future Labs",
+                  testimonial: "Working with Swaraj on our digital twin project was a game-changer. His attention to detail and innovative approach helped us solve complex engineering challenges.",
+                  avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop"
                 },
                 {
-                  question: "Do you offer services for 3D printing and prototyping?",
-                  answer: "Yes, I can assist with 3D printing services, prototype development, and physical model creation. I specialize in designing parts optimized for additive manufacturing processes."
-                },
-                {
-                  question: "What is your typical process for starting a new project?",
-                  answer: "I typically begin with a detailed discovery call to understand your requirements, followed by a project scope document. After agreement on objectives and timeline, I develop an implementation plan and proceed with regular updates throughout the project lifecycle."
+                  name: "Michael Chen",
+                  role: "Lead Engineer, GlobalTech",
+                  testimonial: "Swaraj's 3D printing expertise helped us prototype our product in record time. His technical knowledge and problem-solving skills are truly exceptional.",
+                  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop"
                 }
-              ].map((faq, i) => (
+              ].map((testimonial, i) => (
                 <motion.div
                   key={i}
-                  className="bg-background p-6 rounded-xl shadow-md"
+                  className="bg-background p-8 rounded-xl shadow-lg relative"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={variants}
                   custom={i}
                 >
-                  <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
+                  <div className="absolute -top-10 left-8">
+                    <div className="h-20 w-20 rounded-full overflow-hidden border-4 border-background shadow-md">
+                      <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="pt-12">
+                    <p className="text-muted-foreground italic mb-6">"{testimonial.testimonial}"</p>
+                    <div className="border-t border-border pt-4">
+                      <h4 className="font-bold text-lg">{testimonial.name}</h4>
+                      <p className="text-secondary text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>

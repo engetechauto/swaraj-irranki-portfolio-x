@@ -87,77 +87,99 @@ const Index = () => {
         {/* Hero Section - Updated with modern UI */}
         <section className="relative min-h-[90vh] flex flex-col justify-center px-6 md:px-10 lg:px-20 overflow-hidden">
           {/* Decorative elements */}
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-primary/10 blur-3xl -z-10"></div>
+          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-secondary/10 blur-3xl -z-10"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-secondary/10 blur-3xl -z-10"></div>
           
-          <div className="container mx-auto z-10">
-            <motion.p
-              className="text-lg md:text-xl mb-6 text-primary font-inter font-light uppercase tracking-widest"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              Engineering the Future
-            </motion.p>
-            
-            <div className="mb-6">
-              <motion.h1
-                className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 leading-tight"
+          <div className="container mx-auto z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <motion.p
+                className="text-lg md:text-xl mb-6 text-secondary font-inter font-light uppercase tracking-widest"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ duration: 0.5 }}
               >
-                Swaraj <span className="text-primary">Irranki</span>
-              </motion.h1>
+                Engineering the Future
+              </motion.p>
+              
+              <div className="mb-6 overflow-hidden">
+                <motion.div
+                  ref={nameRef}
+                  className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  Swaraj <span className="text-secondary">Irranki</span>
+                </motion.div>
+              </div>
+              
+              <motion.h2
+                className="text-2xl md:text-3xl lg:text-4xl font-medium my-6 text-secondary"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                Smart Technologies, Modern Solutions
+              </motion.h2>
+              
+              <div className="max-w-2xl h-[1px] bg-gradient-to-r from-secondary/80 to-background my-8"></div>
+              
+              <motion.p
+                className="text-lg md:text-xl max-w-2xl mb-12 text-muted-foreground leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Mechanical engineer specializing in robotics, digital twin technologies,
+                additive manufacturing, and automation. Building innovative solutions for tomorrow's challenges.
+              </motion.p>
+              
+              <motion.div
+                className="flex flex-wrap gap-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-secondary text-secondary-foreground text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-secondary/25 hover:-translate-y-1 transition-all duration-300"
+                  onMouseMove={handleMagneticEffect}
+                  onMouseLeave={handleMagneticLeave}
+                >
+                  <Link to="/portfolio">View Portfolio</Link>
+                </Button>
+                
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-secondary text-lg bg-transparent text-secondary px-8 py-6 rounded-lg hover:bg-secondary/5 hover:-translate-y-1 transition-all duration-300"
+                  onMouseMove={handleMagneticEffect}
+                  onMouseLeave={handleMagneticLeave}
+                >
+                  <Link to="/contact">Contact Me</Link>
+                </Button>
+              </motion.div>
             </div>
             
-            <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-medium my-6 text-secondary"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Smart Technologies, Modern Solutions
-            </motion.h2>
-            
-            <div className="max-w-2xl h-[1px] bg-gradient-to-r from-primary/80 to-background my-8"></div>
-            
-            <motion.p
-              className="text-lg md:text-xl max-w-2xl mb-12 text-muted-foreground leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              Mechanical engineer specializing in robotics, digital twin technologies,
-              additive manufacturing, and automation. Building innovative solutions for tomorrow's challenges.
-            </motion.p>
-            
+            {/* Headshot Image */}
             <motion.div
-              className="flex flex-wrap gap-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              className="hidden lg:flex justify-center items-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Button
-                asChild
-                size="lg"
-                className="bg-primary text-primary-foreground text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-primary/25 hover:-translate-y-1 transition-all duration-300"
-                onMouseMove={handleMagneticEffect}
-                onMouseLeave={handleMagneticLeave}
-              >
-                <Link to="/portfolio">View Portfolio</Link>
-              </Button>
-              
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-2 border-primary text-lg bg-transparent text-primary px-8 py-6 rounded-lg hover:bg-primary/5 hover:-translate-y-1 transition-all duration-300"
-                onMouseMove={handleMagneticEffect}
-                onMouseLeave={handleMagneticLeave}
-              >
-                <Link to="/contact">Contact Me</Link>
-              </Button>
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-secondary/30 to-secondary/10 blur-lg"></div>
+                <div className="h-[450px] w-[450px] rounded-full overflow-hidden border-8 border-background shadow-2xl relative z-10">
+                  <img 
+                    src="https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?q=80&w=1000&auto=format&fit=crop" 
+                    alt="Swaraj Irranki" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </motion.div>
             
             {/* Scroll indicator */}
@@ -168,7 +190,7 @@ const Index = () => {
               transition={{ delay: 1.2, duration: 0.5 }}
             >
               <p className="text-muted-foreground mb-2 text-sm">Scroll to explore</p>
-              <div className="w-[2px] h-16 bg-gradient-to-b from-primary to-transparent"></div>
+              <div className="w-[2px] h-16 bg-gradient-to-b from-secondary to-transparent"></div>
             </motion.div>
           </div>
         </section>
